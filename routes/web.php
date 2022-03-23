@@ -21,6 +21,9 @@ Route::get('/login', function(){return view('usuarios.login');}) -> name('login'
 
 Route::post('/login', [LoginController::class, 'login']) -> name('login');
 
+Route::post('/logout', [LoginController::class, 'logout']) -> name('logout');
+
+
 Route::get('/registros', [RegistrosController::class, 'index']) -> name('registros');
 
 Route::post('/registros', [RegistrosController::class, 'store']) -> name('registros');

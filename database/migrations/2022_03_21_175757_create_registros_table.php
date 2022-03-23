@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
             $table->string('lugar_toma');
-            $table->string('nivel_de_co2');
-            $table->float('temperatura');
+            $table->integer('nivel_de_co2');
+            $table->integer('temperatura');
             $table->timestamps();
         });
     }

@@ -1,13 +1,20 @@
 @extends('app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-2">
         <form action="{{  route('login')  }}" method="POST">
             @csrf
+            @foreach ($errors->all() as $error)
+             <h6 class="alert alert-danger ">{{ $error }}</h6>     
+            @endforeach
+                
+            
             <h1>Iniciar sesion</h1>
-            <div class="mb-3">
-                <label for="title" class="form-label">Nombre de usuario</label>
-                <input type="text" name="usuario" class="form-control">
+            
+
+              <div class="mb-3">
+                <label for="title" class="form-label">Email</label>
+                <input type="text" name="email" class="form-control">
               </div>
       
               <div class="mb-3">

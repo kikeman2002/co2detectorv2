@@ -17,12 +17,14 @@ class UsuariosController extends Controller
     {
         $request->validate([
             'usuario' => 'required|min:1',
+            'email' => 'required|min:1',
             'password' => 'required|min:1',
 
         ]);
 
         $usuario = new User();
-        $usuario->usuario = $request->usuario;
+        $usuario->name = $request->usuario;
+        $usuario->email = $request->email;
         $usuario->password = $request->password;
         $usuario->save();
 

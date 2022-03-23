@@ -64,8 +64,11 @@
             </ul>
            
           </div>
-            @if (Auth::check())
-                <form action="#">
+            @auth
+                
+            
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
                     <button type="submit" class="btn btn-primary float-right">Cerrar Sesion</button>
                 </form>
             @else
@@ -73,8 +76,7 @@
                 <button type="submit" class="btn btn-primary float-right " >Iniciar Sesion</button>    
             </form>
             
-                
-            @endif
+            @endauth
           
         </div>
       </nav>

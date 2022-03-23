@@ -19,6 +19,10 @@
           <input type="text" name="usuario" class="form-control">
         </div>
 
+          <label for="title" class="form-label">Email</label>
+          <input type="text" name="email" class="form-control">
+        
+
         <div class="mb-3">
             <label for="title" class="form-label">Password</label>
             <input type="password" name="password" class="form-control">
@@ -32,7 +36,7 @@
         
             <div class="row py-1">
                 <div class="col-md-9 d-flex align-items-center">
-                    <a href="{{ route('usuarios-edit', ['id' => $usuario->id]) }}">{{ $usuario->usuario }}</a>
+                    <a href="{{ route('usuarios-edit', ['id' => $usuario->id]) }}">{{ $usuario->name }}</a>
                 </div>
 
                 <div class="col-md-3 d-flex justify-content-end">
