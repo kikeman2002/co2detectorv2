@@ -86,7 +86,6 @@
       @yield('content')
 
         <div class="container px-4 px-lg-5">
-            <!-- Heading Row-->
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
                 <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://greenheck-cms-prod.azureedge.net/atg-cms-prod/images/default-source/icons/air-movement.png?sfvrsn=49e4866d_4" alt="..." /></div>
                 <div class="col-lg-5">
