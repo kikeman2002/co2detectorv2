@@ -44,29 +44,25 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{route('usuarios')}}">Usuarios</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('registros')}}">Lecturas de Co2</a>
+                    </li>
                 @else
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-current="page">Usuarios</a>
                     </li>
-                @endif
-
-                @if (Auth::check())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('registros')}}">Lecturas de Co2</a>
-                    </li>
-                @else
                     <li class="nav-item">
                         <a class="nav-link disabled">Lecturas de Co2</a>
                     </li>
                 @endif
+
               
               
             </ul>
            
           </div>
             @auth
-                
-            
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-primary float-right">Cerrar Sesion</button>
