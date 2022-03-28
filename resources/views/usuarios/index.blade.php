@@ -30,26 +30,33 @@
         
         <button type="submit" class="btn btn-primary">Crear nuevo usuario</button>
     </form>
-
-    <div>
-        @foreach ($usuarios as $usuario)
-        
-            <div class="row py-1">
-                <div class="col-md-9 d-flex align-items-center">
+</div>
+<br>
+<div class="container py-4">
+        <table class="table table-bordered">
+            <thead class="thead-light" >
+                <tr>
+                    <th scope="col">Nombre de usuario</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            @foreach ($usuarios as $usuario)
+            <tr>
+                <td>
                     <a href="{{ route('usuarios-edit', ['id' => $usuario->id]) }}">{{ $usuario->name }}</a>
-                </div>
-
-                <div class="col-md-3 d-flex justify-content-end">
+                </td>
+                <td>{{$usuario->email}}</td>
+                <td style="text-align:center">
                     <form action="{{ route('usuarios-destroy', [$usuario->id]) }}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button class="btn btn-danger btn-sm">Eliminar</button>
                     </form>
-                </div>
-            </div>
-            
-        @endforeach
-    </div>
+                </td>
+            </tr>
+            @endforeach
+        </table>
 </div>
 
 @endsection

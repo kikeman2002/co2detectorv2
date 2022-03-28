@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <div class="container py-4">
+    <div class="container py-4">    
         <form action="{{  route('login')  }}" method="POST">
             @csrf
             @foreach ($errors->all() as $error)
